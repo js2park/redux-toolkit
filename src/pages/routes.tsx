@@ -11,7 +11,7 @@ const ROUTES: RouteObject[] = [
 			<Suspense
 				fallback={
 					<>
-						<span>기다려</span>
+						<div className="h-screen bg-black" />
 					</>
 				}
 			>
@@ -25,7 +25,7 @@ const ROUTES: RouteObject[] = [
 			<Suspense
 				fallback={
 					<>
-						<span>기다려</span>
+						<div className="h-screen bg-black" />
 					</>
 				}
 			>

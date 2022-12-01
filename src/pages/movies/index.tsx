@@ -22,8 +22,13 @@ const MoviesPage = () => {
 	return (
 		<div className="flex flex-col grow">
 			{isLoading ? (
-				<div className="flex flex-col grow items-center justify-center">
-					<span>잠시만요...</span>
+				<div
+					className="flex flex-col grow items-center justify-center h-screen"
+					style={{
+						minHeight: '-webkit-fill-available',
+					}}
+				>
+					<span>잠시만요!</span>
 				</div>
 			) : (
 				<>
@@ -31,41 +36,32 @@ const MoviesPage = () => {
 						({
 							id,
 							title,
-							summary,
-							genres,
-							large_cover_image,
 							year,
+							large_cover_image,
 						}: {
 							id: number;
 							title: string;
-							summary: string;
-							genres: [];
-							large_cover_image: string;
 							year: number;
+							summary: string;
+							large_cover_image: string;
 						}) => (
 							<div
 								key={id}
-								className="flex flex-col gap-y-1 border-t border-gray-200 py-4 first-of-type:border-0"
+								className="flex flex-col border-t border-gray-200 py-4 first-of-type:border-0 first-of-type:pt-0"
 							>
 								<Link to={`/movie/${id}`}>
-									<img
-										src={large_cover_image}
-										alt={`${title} 포스터`}
-										className="max-w-[240px]"
-									/>
+									<div className="flex overflow-hidden">
+										<img
+											src={large_cover_image}
+											alt={`${title} 포스터`}
+											className="shrink-0 w-auto h-full"
+										/>
+									</div>
 								</Link>
-								<div className="inline-flex items-center">
+								<div className="inline-flex items-center py-3 px-5">
 									<h2 className="font-bold text-[24px]">{title}</h2>
 									<span className="ml-3">{year}</span>
 								</div>
-								<p>{summary}</p>
-								<ul className="flex items-center gap-x-2">
-									{genres.map((item, index) => (
-										<li key={index} className="shrink-0 border py-1 px-2">
-											<span>{item}</span>
-										</li>
-									))}
-								</ul>
 							</div>
 						),
 					)}
