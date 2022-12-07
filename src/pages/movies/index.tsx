@@ -18,6 +18,10 @@ const MoviesPage = () => {
 		);
 	}
 
+	// TODO:
+
+	// FIXME:
+
 	return (
 		<div className="flex flex-col grow">
 			{isLoading ? (
