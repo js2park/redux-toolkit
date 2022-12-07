@@ -20,7 +20,7 @@ const ROUTES: RouteObject[] = [
 		),
 	},
 	{
-		path: '/movie/:id',
+		path: '/:movieId',
 		element: (
 			<Suspense
 				fallback={

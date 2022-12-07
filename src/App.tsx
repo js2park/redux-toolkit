@@ -5,7 +5,7 @@ import Pages from './pages';
 const App = () => {
 	return (
 		<>
-			<BrowserRouter>
+			<BrowserRouter basename="movie">
 				<Pages />
 			</BrowserRouter>
 		</>
